@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springboots.mapper.App_infoMapper">
+    <select id="selectPartInfo" resultType="java.util.Map">
+
+SELECT softwareName ,APKName,softwaresize,
+(SELECT valueName FROM data_dictionary WHERE flatformId = valueId AND typeCode='APP_FLATFORM') AS valueName,
+CONCAT((SELECT categoryName FROM app_category WHERE app_category.id =categoryLevel1 ),
+'-->',(SELECT categoryName FROM app_category WHERE app_category.id =categoryLevel2 ),
+'-->',(SELECT categoryName FROM app_category WHERE app_category.id =categoryLevel3 )) AS categoryName,
+(SELECT valueName FROM data_dictionary WHERE typeCode = 'APP_STATUS' AND STATUS = valueId) AS valueName,
+downloads,
+(SELECT versionNo FROM app_version WHERE app_info.versionId=app_version.id ) AS versionNo
+FROM app_info
+LIMIT #{pageIndex},#{pageSize}
+
+    </select>
+
+    <select id="infoCount" resultType="int">
+    </select>
+</mapper>
