@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springboots.mapper.Backend_userMapper">
+    <select id="selectUserType" resultType="springboots.pojo.Backend_user">
+
+SELECT 	backend_user.id,
+	userCode,
+	userName,
+	userType,
+	backend_user.createdBy,
+	backend_user.creationDate,
+	backend_user.modifyBy,
+	backend_user.modifyDate,
+	valueName
+	FROM
+	appinfodb.backend_user,appinfodb.data_dictionary
+	WHERE
+	backend_user.userType = data_dictionary.valueId AND userCode = #{userCode}  AND userPassword = #{userPassword} AND typeCode = 'USER_TYPE' AND valueId = '1'
+
+    </select>
+</mapper>
