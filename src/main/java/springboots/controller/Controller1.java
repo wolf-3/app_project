@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
-//@Controller
+//@Controller木子李
 @RestController
 public class Controller1 {
 
     @RequestMapping("/hello")
     public String test01(){
-
+        System.out.println("李小峰");
         return "test";
     }
 
