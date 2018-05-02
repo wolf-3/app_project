@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springboots.mapper.App_categoryMapper">
+    <select id="selectCategory" resultType="java.util.Map">
+        SELECT app_category.id,categoryName FROM app_category
+        <choose>
+            <when test="parentId != null and parentId !=0">
+                WHERE parentId = #{parentId}
+            </when>
+            <otherwise>
+                WHERE parentId IS NULL
+            </otherwise>
+        </choose>
+    </select>
+
+</mapper>
