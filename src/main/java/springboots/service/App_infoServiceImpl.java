@@ -19,6 +19,14 @@ public class App_infoServiceImpl implements  App_infoService {
 
 
     @Override
+    public boolean chageStatus(int status, int id) {
+        if(app_infoMapper.chageStatus(status,id)==1){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public List<Map<String, Object>> selectPartInfo(String querySoftwareName, int queryFlatformId, int queryCategoryLevel1, int queryCategoryLevel2, int queryCategoryLevel3, int pageIndex, int pageSize) {
         return app_infoMapper.selectPartInfo( querySoftwareName,  queryFlatformId,  queryCategoryLevel1,  queryCategoryLevel2,  queryCategoryLevel3,  pageIndex,  pageSize);
     }
@@ -26,5 +34,10 @@ public class App_infoServiceImpl implements  App_infoService {
     @Override
     public int infoCount(String querySoftwareName, int queryFlatformId, int queryCategoryLevel1, int queryCategoryLevel2, int queryCategoryLevel3) {
         return app_infoMapper.infoCount(querySoftwareName,  queryFlatformId,  queryCategoryLevel1,  queryCategoryLevel2,  queryCategoryLevel3);
+    }
+
+    @Override
+    public Map<String, Object> selectAppInfo(int id) {
+        return app_infoMapper.selectAppInfo(id);
     }
 }

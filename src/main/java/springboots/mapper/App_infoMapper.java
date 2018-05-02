@@ -27,7 +27,7 @@ public interface App_infoMapper {
     /**
      * 改
      */
-
+    public int chageStatus(@Param("status")int status,@Param("id")int id);
 
     /**
      * 查
@@ -46,5 +46,7 @@ public interface App_infoMapper {
                          @Param("queryCategoryLevel1")int queryCategoryLevel1,
                          @Param("queryCategoryLevel2")int queryCategoryLevel2,
                          @Param("queryCategoryLevel3")int queryCategoryLevel3);
+
+    public Map<String,Object> selectAppInfo(@Param("id")int id);
 
 }

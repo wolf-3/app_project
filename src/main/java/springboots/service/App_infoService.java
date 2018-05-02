@@ -24,7 +24,7 @@ public interface App_infoService {
     /**
      * 改
      */
-
+    public boolean chageStatus(int status,int id);
 
     /**
      * 查
@@ -44,4 +44,5 @@ public interface App_infoService {
                          int queryCategoryLevel2,
                          int queryCategoryLevel3);
 
+    public Map<String,Object> selectAppInfo(int id);
 }

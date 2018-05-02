@@ -3,7 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="springboots.mapper.App_infoMapper">
-    <select id="selectPartInfo" resultType="java.util.Map">
+    <update id="chageStatus" >
+        UPDATE  app_info SET STATUS = #{status} WHERE id = #{id}
+    </update>
+
+    <select id="selectPartInfo" resultType="java.util.Map" >
 
 SELECT app_info.id,softwareName ,APKName,softwaresize,
         (SELECT valueName FROM data_dictionary WHERE flatformId = valueId AND typeCode='APP_FLATFORM') AS APP_FLATFORM,
@@ -71,7 +75,8 @@ FROM app_info
         (SELECT versionNo FROM app_version WHERE app_info.versionId=app_version.id ) AS versionNo,
         (SELECT versionSize FROM app_version WHERE app_info.versionId=app_version.id ) AS versionSize,
         (SELECT publishStatus FROM app_version WHERE app_info.versionId=app_version.id ) AS publishStatus,
-        (SELECT versionInfo FROM app_version WHERE app_info.versionId=app_version.id ) AS versionInfo
-        FROM app_info WHERE id = ${}
+        (SELECT versionInfo FROM app_version WHERE app_info.versionId=app_version.id ) AS versionInfo,
+        (SELECT downloadLink FROM app_version WHERE app_info.versionId=app_version.id ) AS downloadLink
+        FROM app_info WHERE id = ${id}
     </select>
 </mapper>

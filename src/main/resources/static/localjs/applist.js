@@ -62,7 +62,7 @@ $(".checkApp").on("click",function(){
 	var statusname = obj.attr("statusname");
 	var vid = obj.attr("versionid");
 	if(statusname == "待审核" && vid != "" && vid != null){//待审核状态下才可以进行审核操作
-		window.location.href="/appcheck。html?aid="+ obj.attr("appinfoid") + "&vid="+ obj.attr("versionid");
+		window.location.href="/appcheck.html?aid="+ obj.attr("appinfoid") + "&vid="+ obj.attr("versionid");
 	}else if(vid == "" || vid == null){
 		alert("该APP应用没有上传最新版本,不能进行审核操作！");
 	}else if(statusname != "待审核"){

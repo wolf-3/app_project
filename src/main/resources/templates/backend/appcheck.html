@@ -203,109 +203,106 @@
           <div class="clearfix"></div>
       </div>
       <div class="x_content1">
-        <form class="form-horizontal form-label-left" action="checksave" method="post">
-          <input type="hidden" name="id" value="${appInfo.id}">
+        <form class="form-horizontal form-label-left" action="" method="post">
+          <input type="text" name="id" value="${appInfoMap['id']}" id="appId">
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">软件名称 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="softwareName">软件名称 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input class="form-control col-md-7 col-xs-12" value="${appInfo.softwareName}" 
-              type="text" readonly="readonly">
+              <input class="form-control col-md-7 col-xs-12" value="${appInfoMap['softwareName']}"
+              type="text" readonly="readonly" id="softwareName">
             </div>
           </div>
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">APK名称 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="APKName">APK名称 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <input type="text" class="form-control col-md-7 col-xs-12" 
-              value="${appInfo.APKName}" readonly="readonly">
+              value="${appInfoMap['APKName']}" readonly="readonly" id="APKName">
             </div>
           </div>
           
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">支持ROM <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="supportROM">支持ROM <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <input class="form-control col-md-7 col-xs-12" 
-              	value="${appInfo.supportROM}" type="text" readonly="readonly">
+              	value="${appInfoMap['supportROM']}" type="text" readonly="readonly" id="supportROM">
             </div>
           </div>
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">界面语言 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="interfaceLanguage">界面语言 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <input class="form-control col-md-7 col-xs-12" readonly="readonly"
-              	value="${appInfo.interfaceLanguage}" type="text">
+              	value="${appInfoMap['interfaceLanguage']}" type="text" id="interfaceLanguage">
             </div>
           </div>
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">软件大小 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="softwaresize">软件大小 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input type="text" value="${appInfo.softwareSize}"
-              class="form-control col-md-7 col-xs-12" readonly="readonly">
+              <input type="text" value="${appInfoMap['softwaresize']}"
+              class="form-control col-md-7 col-xs-12" readonly="readonly" id="softwaresize">
             </div>
           </div>
           
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">下载次数 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="downloads">下载次数 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input type="text" value="${appInfo.downloads}"
-               class="form-control col-md-7 col-xs-12" readonly="readonly">
+              <input type="text" value="${appInfoMap['downloads']}"
+               class="form-control col-md-7 col-xs-12" readonly="readonly" id="downloads">
             </div>
           </div>
           
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12"  for="select">所属平台 <span class="required">*</span></label>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12"  for="APP_FLATFORM">所属平台 <span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <input type="text" class="form-control col-md-7 col-xs-12" 
-              	value="${appInfo.flatformName}" readonly="readonly">
+              	value="${appInfoMap['APP_FLATFORM']}" readonly="readonly" id="APP_FLATFORM">
             
             </div>
           </div>
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="select">所属分类 <span class="required">*</span></label>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="categoryName">所属分类 <span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <input type="text" class="form-control col-md-7 col-xs-12" 
-              	value="${appInfo.categoryLevel1Name} --> ${appInfo.categoryLevel2Name} --> ${appInfo.categoryLevel3Name}" readonly="readonly">
+              	value="${appInfoMap['categoryName']}" readonly="readonly" id="categoryName">
             </div>
           </div>
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">APP状态 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="valueName">APP状态 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
             	<input type="text" class="form-control col-md-7 col-xs-12" 
-              	value="${appInfo.statusName}" readonly="readonly">
+              	value="${appInfoMap['valueName']}" readonly="readonly" id="valueName">
             </div>
           </div>
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">应用简介 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="appInfo">应用简介 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <textarea class="form-control col-md-7 col-xs-12" readonly="readonly"> 
-              ${appInfo.appInfo}</textarea>
+              <textarea class="form-control col-md-7 col-xs-12" readonly="readonly" id="appInfo">
+              ${appInfoMap['appInfo']}</textarea>
             </div>
           </div>
            <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">LOGO图片 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="logoPicPath">LOGO图片 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-			 <c:choose> 
-				  <c:when test="${appInfo.logoPicPath == null || appInfo.logoPicPath == ''}">   
-				    	暂无
-				  </c:when> 
-				  <c:otherwise>   
-				    <img src="${appInfo.logoPicPath }?m=1" width="100px;"/> 
-				  </c:otherwise> 
-              </c:choose> 
+              <#if (appInfoMap['logoPicPath'])??>
+              <img src="${appInfoMap['logoPicPath'] }?m=1" width="100px;" id="logoPicPath"/>
+              <#else>
+              暂无
+              </#if>
             </div>
           </div>
         	<div class="form-group">
         		<div class="col-md-6 col-md-offset-3">
-        		<button id="status" type="submit" name="status" value="2" class="btn btn-success">审核通过</button>
-        		<button id="status" type="submit" name="status" value="3" class="btn btn-success">审核不通过</button>
-          		<button type="button" class="btn btn-primary" id="back">返回</button>
+        		<button  type="button" name="status" value="2" class="btn btn-success" onclick="changeStatus(2)">审核通过</button>
+        		<button  type="button" name="status" value="3" class="btn btn-success" onclick="changeStatus(3)">审核不通过</button>
+          		<button type="button" class="btn btn-primary" id="backPage" onclick="back()">返回</button>
         		</div>
      		</div>
         </form>
@@ -323,50 +320,47 @@
          <br>
         <form class="form-horizontal form-label-left">
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">版本号 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="versionNo">版本号 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input class="form-control col-md-7 col-xs-12" value="${appVersion.versionNo }" 
-              type="text" readonly="readonly" >
+              <input class="form-control col-md-7 col-xs-12" value="${appInfoMap['versionNo']}"
+              type="text" readonly="readonly" id="versionNo">
             </div>
           </div>
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">版本大小 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="versionSize">版本大小 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input type="number" value="${appVersion.versionSize }" class="form-control col-md-7 col-xs-12">
+              <input type="number" value="${appInfoMap['versionSize'] }" class="form-control col-md-7 col-xs-12" id="versionSize">
             </div>
           </div>
        
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12"  for="select">发布状态 <span class="required">*</span></label>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12"  for="publishStatus">发布状态 <span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input type="hidden" name="publishStatus" id="publishStatus" value="3">预发布
+              <input type="text" name="publishStatus" id="publishStatus" value="3">预发布
             </div>
           </div>
         
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">版本简介 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="versionInfo">版本简介 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <textarea class="form-control col-md-7 col-xs-12">
-              ${appVersion.versionInfo }</textarea>
+              <textarea class="form-control col-md-7 col-xs-12" id="versionInfo">
+              ${appInfoMap['versionInfo'] }</textarea>
             </div>
           </div>
            <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">apk文件 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="downloadLink">apk文件 <span class="required">*</span>
             </label>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-            <c:choose>
-			  <c:when test="${appVersion.downloadLink == null || appVersion.downloadLink == ''}">   
-			    	暂无
-			  </c:when> 
-			  <c:otherwise>   
-			    <p>${appVersion.apkFileName}&nbsp;&nbsp;
-			    <a href="${appVersion.downloadLink}" >下载</a>
-			    </p>
-			  </c:otherwise> 
-            </c:choose> 
+            <div class="col-md-6 col-sm-6 col-xs-12" id="downloadLink">
+              <#if (appInfoMap['downloadLink'] )??>
+              <p>${appInfoMap['APKName']}&nbsp;&nbsp;
+                <a href="${appInfoMap['downloadLink']}" >下载</a>
+              <#else>
+                暂无
+              </p>
+              </#if>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -377,5 +371,35 @@
     <br/><br/>
   </div>
 </div>
+</div>
+      </div>
+    </div>
+  </div>
+  <!-- /page content -->
+  <!-- footer content -->
+  <footer>
+    <div class="pull-right">
+      ©2016 All Rights Reserved.
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+  <!-- /footer content -->
+</div>
+</div>
+<   <!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="js/fastclick.js"></script>
+<!-- NProgress -->
+<script src="js/nprogress.js"></script>
+<!-- jQuery custom content scroller -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="js/custom.min.js"></script>
 
 <script src="localjs/appcheck.js"></script>
+</body>
+</html>

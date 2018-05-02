@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import springboots.service.App_categoryService;
 import springboots.service.App_infoService;
 import springboots.service.Data_dictionaryService;
@@ -100,9 +101,24 @@ public class App_infoController {
     }
 
     @RequestMapping("/appcheck.html")
-    public String appCheck(){
+    public String appCheck(@RequestParam()String aid,HttpServletRequest httpServletRequest){
+        Map<String,Object> map  = app_infoService.selectAppInfo(Integer.parseInt(aid));
+        httpServletRequest.setAttribute("appInfoMap",map);
+        return "backend/appcheck";
+    }
 
-        return "appcheck";
+    @RequestMapping("/changestatus")
+    @ResponseBody
+    public String changeStatus(@RequestParam()String status,@RequestParam()String id){
+        String info = "";
+        if(app_infoService.chageStatus(Integer.parseInt(status),Integer.parseInt(id))){
+            if("2".equals(status)){
+                info = "审核通过";
+            }else if("3".equals(status)){
+                info = "审核未通过";
+            }
+        }
+        return "{\"info\":\""+info+"\"}";
     }
 
 }
