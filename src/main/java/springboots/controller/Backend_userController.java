@@ -45,11 +45,7 @@ public class Backend_userController {
         return "backend/main";
     }
 
-    @RequestMapping("/backapplist.html")
-    public String backEndAppList(){
 
-        return "backend/applist";
-    }
 
     @RequestMapping("/backappcheck.html")
     public String backEndAppCheck( HttpServletRequest httpServletRequest){

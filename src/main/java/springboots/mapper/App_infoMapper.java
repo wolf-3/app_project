@@ -32,8 +32,19 @@ public interface App_infoMapper {
     /**
      * 查
      */
-    public List<Map<String,Object>> selectPartInfo(@Param("pageIndex")int pageIndex,@Param("pageSize")int pageSize);
+    public List<Map<String,Object>> selectPartInfo(@Param("querySoftwareName")String querySoftwareName,
+                                                   @Param("queryFlatformId")int queryFlatformId,
+                                                   @Param("queryCategoryLevel1")int queryCategoryLevel1,
+                                                   @Param("queryCategoryLevel2")int queryCategoryLevel2,
+                                                   @Param("queryCategoryLevel3")int queryCategoryLevel3,
+                                                   @Param("pageIndex")int pageIndex,
+                                                   @Param("pageSize") int pageSize
+                                                   );
 
-    public int infoCount();
+    public int infoCount(@Param("querySoftwareName")String querySoftwareName,
+                         @Param("queryFlatformId")int queryFlatformId,
+                         @Param("queryCategoryLevel1")int queryCategoryLevel1,
+                         @Param("queryCategoryLevel2")int queryCategoryLevel2,
+                         @Param("queryCategoryLevel3")int queryCategoryLevel3);
 
 }

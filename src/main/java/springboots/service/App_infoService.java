@@ -1,7 +1,5 @@
 package springboots.service;
 
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
 import java.util.Map;
 
@@ -31,8 +29,19 @@ public interface App_infoService {
     /**
      * 查
      */
-    public List<Map<String,Object>> selectPartInfo(int pageIndex, int pageSize);
+    public List<Map<String,Object>> selectPartInfo(String querySoftwareName,
+                                                   int queryFlatformId,
+                                                   int queryCategoryLevel1,
+                                                   int queryCategoryLevel2,
+                                                   int queryCategoryLevel3,
+                                                   int pageIndex,
+                                                    int pageSize
+    );
 
-    public int pageCount(int pageSize);
+    public int infoCount(String querySoftwareName,
+                         int queryFlatformId,
+                         int queryCategoryLevel1,
+                         int queryCategoryLevel2,
+                         int queryCategoryLevel3);
 
 }

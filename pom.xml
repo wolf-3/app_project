@@ -53,6 +53,13 @@
   		<groupId>org.springframework.boot</groupId>
   		<artifactId>spring-boot-starter-freemarker</artifactId>
   	</dependency>
+
+        <!--fastjson-->
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>fastjson</artifactId>
+          <version>1.1.41</version>
+      </dependency>
   </dependencies>
    <!-- 3.jdk版本更新为1.7 -->
   <build>
